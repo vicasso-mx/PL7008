@@ -3,7 +3,7 @@ lab:
   title: Crear un agente inicial
   module: Administrar temas en Microsoft Copilot Studio
   description: En este ejercicio, accederá al portal de Microsoft Copilot Studio, seleccionará el entorno adecuado y creará un nuevo agente.
-  duration: 84 minutes
+  duration: 84 minutos
   level: 200
   islab: true
   primarytopics:
