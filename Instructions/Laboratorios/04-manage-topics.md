@@ -1,147 +1,147 @@
 ---
 lab:
-  title: Manage topics
-  module: Manage topics in Microsoft Copilot Studio
-  description: In this exercise, you will use Copilot to create a topic from a description. This allows generative AI to draft the initial structure, which you can then refine.
-  duration: 102 minutes
+  title: Administrar temas
+  module: Administrar temas en Microsoft Copilot Studio
+  description: En este ejercicio, usará Copilot para crear un tema a partir de una descripción. Esto permite que la IA generativa redacte la estructura inicial, que luego podrá refinar.
+  duration: 102 minutos
   level: 100
   islab: true
 ---
 
-# Manage topics
+# Administrar temas
 
-## Scenario
+## Escenario
 
-In this exercise, you will:
+En este ejercicio, usted:
 
-- Manage existing topics
-- Create and edit topics using Copilot
-- Create a topic manually and add trigger phrases
+- Administrará temas existentes
+- Creará y editará temas mediante Copilot
+- Creará un tema manualmente y agregará frases desencadenadoras
 
-This exercise will take approximately **30** minutes to complete.
+Este ejercicio tardará aproximadamente **30** minutos en completarse.
 
-## What you will learn
+## Lo que aprenderá
 
-- How topics complement generative AI responses
-- When topics are used to enforce structured conversations
-- How to create and refine topics using natural language
+- Cómo los temas complementan las respuestas de IA generativa
+- Cuándo se usan los temas para imponer conversaciones estructuradas
+- Cómo crear y refinar temas mediante lenguaje natural
 
-## High-level lab steps
+## Pasos generales del laboratorio
 
-- Review and disable unnecessary topics
-- Create a topic using Copilot
-- Edit topic content using natural language
-- Test topic behavior with generative AI enabled
+- Revisar y deshabilitar temas innecesarios
+- Crear un tema mediante Copilot
+- Editar el contenido del tema mediante lenguaje natural
+- Probar el comportamiento del tema con la IA generativa habilitada
   
-## Prerequisites
+## Requisitos previos
 
-- Must have completed **Lab: Build an initial agent**
+- Debe haber completado **Laboratorio: Crear un agente inicial**
 
 
-## Key concept: Topics and generative AI
-When generative AI is enabled, the agent may answer questions dynamically without triggering a topic. This is expected behavior.
+## Concepto clave: Temas e IA generativa
+Cuando la IA generativa está habilitada, el agente puede responder preguntas de forma dinámica sin desencadenar un tema. Este es el comportamiento esperado.
 
-Topics are used when you need to:
-- Collect required information step by step
-- Control the order of questions
-- Store responses in variables
-- Ensure predictable outcomes
+Los temas se usan cuando necesita:
+- Recopilar información requerida paso a paso
+- Controlar el orden de las preguntas
+- Almacenar respuestas en variables
+- Garantizar resultados predecibles
 
-In later labs, you will use topics together with nodes, entities, and tools to enforce your agent's behavior.
+En laboratorios posteriores, usará temas junto con nodos, entidades y herramientas para imponer el comportamiento del agente.
 
-## Detailed steps
+## Pasos detallados
 
-## Exercise 1 - Review and disable topics
+## Ejercicio 1 - Revisar y deshabilitar temas
 
-In this exercise, you will review existing topics and disable one that is not required.
+En este ejercicio, revisará los temas existentes y deshabilitará uno que no es necesario.
 
-### Task 1.1 – Disable topics
+### Tarea 1.1 – Deshabilitar temas
 
-1. Navigate to the Microsoft Copilot Studio portal `https://copilotstudio.microsoft.com` and ensure you are in the appropriate environment.
+1. Vaya al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Select **Agents** from the left navigation pane.
+1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Select the **Real Estate Booking Service** agent you created in the previous lab.
+1. Seleccione el agente **Real Estate Booking Service** que creó en el laboratorio anterior.
 
     ![Agents in Copilot Studio portal.](../media/copilot-studio-agents.png)
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Locate the **Start Over** topic.
+1. Busque el tema **Start Over**.
 
-1. Toggle **Enabled** to **Off** for the **Start Over** topic.
+1. Cambie **Enabled** a **Off** para el tema **Start Over**.
 
     ![Topics removed and disabled in Copilot Studio portal.](../media/topics-removed.png)
 
-Disabling unused topics helps reduce ambiguity when multiple topics or generative responses could handle the same request.
+Deshabilitar los temas no utilizados ayuda a reducir la ambigüedad cuando varios temas o respuestas generativas podrían atender la misma solicitud.
 
-## Exercise 2 - Create topics with natural language
+## Ejercicio 2 - Crear temas mediante lenguaje natural
 
-In this exercise, you will use Copilot to create a topic from a description. This allows generative AI to draft the initial structure, which you can then refine.
+En este ejercicio, usará Copilot para crear un tema a partir de una descripción. Esto permite que la IA generativa redacte la estructura inicial, que luego podrá refinar.
 
-### Task 2.1 – Add a topic from description
+### Tarea 2.1 – Agregar un tema a partir de una descripción
 
-1. Select **+ Add a topic** and select **Add from description with Copilot**. A new window appears.
+1. Seleccione **+ Add a topic** y después **Add from description with Copilot**. Aparecerá una nueva ventana.
 
     ![Create topic with copilot.](../media/topic-create-from-description-2.png)
 
     ![Create topic with copilot.](../media/topic-create-with-copilot.png)
 
-1. In the **Name your topic** text box, enter **`Customer Details`**.
+1. En el cuadro de texto **Name your topic**, escriba **`Detalles del cliente`**.
 
-1. In the **Create a topic to...** text box, enter **`Ask the customer for their name and email address`**.
+1. En el cuadro de texto **Create a topic to...**, escriba **`Preguntar al cliente su nombre y dirección de correo electrónico`**.
 
-1. Select **Create**.
+1. Seleccione **Create**.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 2.2 – Edit topic content using natural language
+### Tarea 2.2 – Editar el contenido del tema mediante lenguaje natural
 
-1. If the **Test your agent** pane is open, close the pane.
+1. Si el panel **Test your agent** está abierto, ciérrelo.
 
-1. If the **Edit with Copilot** pane is not shown on the right side of the **Customer Details** pane, select the **Copilot** icon in the upper part of the authoring canvas.
+1. Si el panel **Edit with Copilot** no aparece en el lado derecho del panel **Customer Details**, seleccione el icono **Copilot** en la parte superior del lienzo de creación.
 
     ![Screenshot of the Edit with Copilot icon.](../media/edit-with-copilot.png)
 
-1. Select the second **Question** node **What is your email address?**
+1. Seleccione el segundo nodo **Question** **What is your email address?**
 
     ![Screenshot of the Edit with Copilot icon.](../media/copilot-email-address-node.png)
 
-1. In the **Edit with Copilot** panel, in the **What do you want to do?** field, enter the following text:
+1. En el panel **Edit with Copilot**, en el campo **What do you want to do?**, escriba el siguiente texto:
 
-    `Change "What is your email address?" to say thank you to the Name variable from the previous node and then proceed to ask the email address question.`
+    `Cambie "What is your email address?" para que agradezca a la variable Name del nodo anterior y luego continúe preguntando por la dirección de correo electrónico.`
 
-1. Select **Update**.
+1. Seleccione **Update**.
 
     ![Screenshot of the Edit with Copilot panel with prompt.](../media/edit-with-copilot-panel.png)
 
     ![Screenshot of the message updated to include the Name variable.](../media/message-updated-name-variable.png)
 
-    > **Note**: The message should be updated to include the *Name* variable from the prior node, and should look similar to the screenshot above. If Edit with copilot did not update the question node correctly, select Undo, and retry with a different prompt.
+    > **Nota**: El mensaje debe actualizarse para incluir la variable *Name* del nodo anterior y debe verse de forma similar a la captura de pantalla anterior. Si **Edit with Copilot** no actualizó correctamente el nodo de pregunta, seleccione **Undo** y vuelva a intentarlo con un prompt diferente.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 2.3 – Add a summary using natural language
+### Tarea 2.3 – Agregar un resumen mediante lenguaje natural
 
-In addition to adding updating existing nodes, you can use Copilot to add new ones.
+Además de actualizar nodos existentes, puede usar Copilot para agregar nuevos nodos.
 
-1. Click an empty area on the authoring canvas so no node is selected.
+1. Haga clic en un área vacía del lienzo de creación para que no haya ningún nodo seleccionado.
 
-1. In the **Edit with Copilot** panel, in the **What do you want to do?** field, enter the following text:
+1. En el panel **Edit with Copilot**, en el campo **What do you want to do?**, escriba el siguiente texto:
 
-    `Summarize the information collected in an adaptive card`
+    `Resuma la información recopilada en una tarjeta adaptable`
 
-1. Select **Update**.
+1. Seleccione **Update**.
 
-A message node with an Adaptive Card is added to the end of the topic.
+Se agrega al final del tema un nodo de mensaje con una Adaptive Card.
 
 ![Screenshot of the message node with an Adaptive Card.](../media/message-node-adaptive-card.png)
 
-1. Select the **Media** box in the Adaptive Card. The Adaptive Card properties should appear on the right of the page.
+1. Seleccione el cuadro **Media** en la Adaptive Card. Las propiedades de la Adaptive Card deberían aparecer en el lado derecho de la página.
 
     ![Screenshot of the Adaptive Card properties.](../media/adaptive-card-properties.png)
 
-   Your Adaptive Card formula should look similar to the one above. If it doesn't, then you can paste in the formula below:
+   La fórmula de la Adaptive Card debería verse de forma similar a la anterior. Si no es así, puede pegar la fórmula siguiente:
 
     ```json
     {
@@ -176,38 +176,38 @@ A message node with an Adaptive Card is added to the end of the topic.
     }
     ```
 
-1. Make sure that no node is selected by selecting the empty space in the authoring canvas.
+1. Asegúrese de que no haya ningún nodo seleccionado seleccionando el espacio vacío del lienzo de creación.
 
-1. Select the **Copilot** icon to reopen the **Edit with Copilot** pane.
+1. Seleccione el icono **Copilot** para volver a abrir el panel **Edit with Copilot**.
 
-1. In the **What do you want to do?** field, enter the following text:
+1. En el campo **What do you want to do?**, escriba el siguiente texto:
 
-    `Add a new multiple choice question to prompt the user if the details are correct with two options Yes or No`
+    `Agregue una nueva pregunta de opción múltiple para consultar al usuario si los detalles son correctos, con dos opciones: Yes o No`
 
-1. Select **Update**.
+1. Seleccione **Update**.
 
-1. A new question node is added to the end of the topic with options for the user to select.
+1. Se agrega al final del tema un nuevo nodo de pregunta con opciones para que el usuario seleccione.
 
     ![Screenshot of the new question node with yes and no options.](../media/new-question-node.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-In later labs, you will use this response to control branching logic and enforce predictable behavior.
+En laboratorios posteriores, usará esta respuesta para controlar la lógica de ramificación e imponer un comportamiento predecible.
 
-## Exercise 3 - Test the topic
+## Ejercicio 3 - Probar el tema
 
-1. To reopen the Test pane, select the **Test** icon in the upper-right of the page.
+1. Para volver a abrir el panel de prueba, seleccione el icono **Test** en la esquina superior derecha de la página.
 
-1. Select the **Start new test session** icon at the top of the testing panel.
+1. Seleccione el icono **Start new test session** en la parte superior del panel de pruebas.
 
     ![Screenshot of the Testing panel options.](../media/copilot-test-pane-start-new-conversation.png)
 
-1. In the text box, enter **`Customer information`**.
+1. En el cuadro de texto, escriba **`Información del cliente`**.
 
-1. Provide a name and email address when prompted.
+1. Proporcione un nombre y una dirección de correo electrónico cuando se le solicite.
 
-1. Select **Yes** when asked to confirm the details.
+1. Seleccione **Yes** cuando se le pida confirmar los detalles.
 
-1. Select **Save**
+1. Seleccione **Save**
 
-Observe how the agent uses the topic to control the conversation, collects required information step by step, and temporarily overrides free-form generative responses.
+Observe cómo el agente usa el tema para controlar la conversación, recopila la información requerida paso a paso y anula temporalmente las respuestas generativas de formato libre.
