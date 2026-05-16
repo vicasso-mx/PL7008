@@ -1,165 +1,165 @@
 ---
 lab:
-  title: Work with entities
-  module: Work with entities and variables in Microsoft Copilot Studio
-  description: In this lab, you used entities to extract structured values from natural language while keeping generative AI enabled. Entities allow your agent to accept flexible input while maintaining predictable behavior.
+  title: Trabajar con entidades
+  module: Trabajar con entidades y variables en Microsoft Copilot Studio
+  description: En este laboratorio, usó entidades (entities) para extraer valores estructurados del lenguaje natural mientras la IA generativa permanecía habilitada. Las entidades (entities) permiten que el agente acepte entradas flexibles mientras mantiene un comportamiento predecible.
   duration: 122 minutes
   level: 100
   islab: true
 ---
 
-# Work with entities
+# Trabajar con entidades
 
-## Scenario
+## Escenario
 
-In this exercise, you will:
+En este ejercicio, hará lo siguiente:
 
-- Create and use entities
+- Crear y usar entidades (entities)
 
-This exercise will take approximately **15** minutes to complete.
+Este ejercicio tardará aproximadamente **15** minutos en completarse.
 
-## What you will learn
+## Lo que aprenderá
 
-- How to use entities with generative AI
-- How entities turn free-form input into structured variables
+- Cómo usar entidades (entities) con IA generativa
+- Cómo las entidades (entities) convierten entradas de formato libre en variables estructuradas
 
-## High-level lab steps
+## Pasos generales del laboratorio
 
-- Create entities
-- Use entities in nodes
+- Crear entidades (entities)
+- Usar entidades (entities) en nodos (nodes)
   
-## Prerequisites
+## Requisitos previos
 
-- Must have completed **Lab: Manage nodes**
+- Debe haber completado **Lab: Manage nodes**
 
-## Detailed steps
+## Pasos detallados
 
-## Exercise 1 - Create a Property Type entity
+## Ejercicio 1 - Crear una entidad de Tipo de propiedad (Property Type)
 
-Microsoft Copilot Studio uses entities to understand user intent. There are many prebuilt entities included for commonly used information. You can create custom entities for your specific purpose.
+Microsoft Copilot Studio usa entidades (entities) para comprender la intención del usuario. Se incluyen muchas entidades (entities) precompiladas para información de uso común. Puede crear entidades (entities) personalizadas para su propósito específico.
 
-### Task 1.1 - View prebuilt entities
+### Tarea 1.1 - Ver entidades precompiladas
 
-1. Navigate to the Microsoft Copilot Studio portal `https://copilotstudio.microsoft.com` and ensure you are in the appropriate environment.
+1. Vaya al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Select **Agents** from the left navigation pane.
+1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Open the **Real Estate Booking Service** agent.
+1. Abra el agente **Real Estate Booking Service**.
 
-1. Select **Settings** in the upper-right of the screen.
+1. Seleccione **Settings** en la esquina superior derecha de la pantalla.
 
-1. Select the **Entities** tab. You should see a list of the prebuilt entities for your agent.
+1. Seleccione la pestaña **Entities**. Debería ver una lista de las entidades (entities) precompiladas para su agente.
 
     ![Screenshot of the Entities tab.](../media/system-entities.png)
 
-### Task 1.2 - Create the Property Type entity
+### Tarea 1.2 - Crear la entidad de Tipo de propiedad (Property Type)
 
-1. Select **+ Add an entity** and select **+ New entity**.
+1. Seleccione **+ Add an entity** y luego **+ New entity**.
 
     ![Screenshot of the selecting the method for a new entity.](../media/add-an-entity.png)
 
-1. Select **Closed list**.
+1. Seleccione **Closed list**.
 
-1. Enter **`Property Type`** in the **Name** field.
+1. Escriba **`Property Type`** en el campo **Name**.
 
-1. Add the following items to the list: 
-    - Apartment
-    - Condominium
-    - Duplex
-    - House
+1. Agregue los siguientes elementos a la lista: 
+    - Apartamento (Apartment)
+    - Condominio (Condominium)
+    - Dúplex (Duplex)
+    - Casa (House)
 
-1. Select **+ Synonyms** for **Apartment**, enter **`Flat`** and select the **+** icon and select **Done**.
+1. Seleccione **+ Synonyms** para **Apartment**, escriba **`Flat`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Select **+ Synonyms** for **Condominium**, enter **`Townhouse`** and select the **+** icon and select **Done**.
+1. Seleccione **+ Synonyms** para **Condominium**, escriba **`Townhouse`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Select **+ Synonyms** for **House**, enter **`Single-family home`** and select the **+** icon and select **Done**.
+1. Seleccione **+ Synonyms** para **House**, escriba **`Single-family home`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Enable **Smart matching**.
+1. Habilite **Smart matching**.
 
     ![Screenshot of the a new entity.](../media/add-list-entity.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-1. Once the entity is saved, close the Property Type window.
+1. Una vez guardada la entidad (entity), cierre la ventana de Tipo de propiedad (Property Type).
 
-### Task 1.3 - Create number of bedrooms entity
+### Tarea 1.3 - Crear la entidad de número de habitaciones
 
-1. Select **+ Add an entity** and select **+ New entity**.
+1. Seleccione **+ Add an entity** y luego **+ New entity**.
 
-1. Select the **Regular expression (Regex)** tile.
+1. Seleccione el mosaico **Regular expression (Regex)**.
 
-1. Enter **`Number of Bedrooms`** in the **Name** field.
+1. Escriba **`Number of Bedrooms`** en el campo **Name**.
 
-1. Enter **`[1-5]`** in the **Pattern** field.
+1. Escriba **`[1-5]`** en el campo **Pattern**.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-1. Once the entity is saved, close the Number of Bedrooms pane.
+1. Una vez guardada la entidad (entity), cierre el panel de Número de habitaciones (Number of Bedrooms).
 
-1. Select the **X** icon in the top-right to close out of Settings and return to your agent.
+1. Seleccione el icono **X** en la esquina superior derecha para cerrar **Settings** y volver al agente.
 
-## Exercise 2 - Use entities to improve the agent
+## Ejercicio 2 - Usar entidades para mejorar el agente
 
-Use entities in the conversational flow to improve the agent.
+Use entidades (entities) en el flujo de conversación para mejorar el agente.
 
-### Task 2.1 - Use entities
+### Tarea 2.1 - Usar entidades
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select the **Book Showing** topic.
+1. Seleccione el tema (topic) **Book Showing**.
 
-1. Select the the **+** icon between the **Condition** and property **Question** nodes, then select **Ask a question**.
+1. Seleccione el icono **+** entre los nodos (nodes) **Condition** y **Question** de propiedad; luego seleccione **Ask a question**.
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `What type of property do you want to see?`
+    `¿Qué tipo de propiedad desea ver?`
 
-1. Select **Property Type** for **Identify**.
+1. Seleccione **Property Type** para **Identify**.
 
-1. Select **Select options for user** and check the **Display** option for all four values.
+1. Seleccione **Select options for user** y marque la opción **Display** para los cuatro valores.
 
-1. Select the variable in **Save user response as** and enter **`PropertyType`** for **Variable name**
+1. Seleccione la variable en **Save user response as** y escriba **`PropertyType`** en **Variable name**.
 
     ![Screenshot of the a new entity.](../media/question-node-entity.png)
 
-1. Select the the **+** icon below the new **Question** node and select **Ask a question**.
+1. Seleccione el icono **+** debajo del nuevo nodo (node) **Question** y luego seleccione **Ask a question**.
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `How many bedrooms do you need?`
+    `¿Cuántas habitaciones necesita?`
 
-1. Select **Number of Bedrooms** for **Identify**.
+1. Seleccione **Number of Bedrooms** para **Identify**.
 
-1. Select the variable in **Save user response as** and enter **`NumberofBedrooms`** for **Variable name**
+1. Seleccione la variable en **Save user response as** y escriba **`NumberofBedrooms`** en **Variable name**.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 2.2 - Test entity extraction
+### Tarea 2.2 - Probar la extracción de entidades
 
-1. Open the **Test** panel.
+1. Abra el panel **Test**.
 
-1. Enable **Track between topics**.
+1. Habilite **Track between topics**.
 
-1. Start a new test session.
+1. Inicie una nueva sesión de prueba.
 
-1. When the Conversation Start message appears, type and send `I want to book a real estate showing`.
+1. Cuando aparezca el mensaje de Inicio de conversación (Conversation Start), escriba y envíe `Quiero reservar una visita a una propiedad inmobiliaria`.
 
-1. Confirm that the agent responds with the greeting message from the **Book Showing** topic.
+1. Confirme que el agente responda con el mensaje de saludo del tema (topic) **Book Showing**.
 
-1. Provide a name and email address when prompted and confirm the information.
+1. Proporcione un nombre y una dirección de correo electrónico cuando se le solicite y confirme la información.
 
-1. When asked which type of property you want to see, enter `I'm looking for a house`.
+1. Cuando se le pregunte qué tipo de propiedad desea ver, escriba `Estoy buscando una casa`.
 
-    > This response is intentionally using natural language. The **Property Type** entity should capture **House**.
+    > Esta respuesta usa lenguaje natural de forma intencional. La entidad de Tipo de propiedad (Property Type) debe capturar Casa (House).
 
-1. When asked which property you want to see, enter `555 Oak Lane, Denver, CO 80203`.
+1. Cuando se le pregunte qué propiedad desea ver, escriba `Casa Colonial en Coyoacán`.
 
-1. When asked what date and time you want to see the property, enter `Tomorrow 8:00 AM`.
+1. Cuando se le pregunte qué fecha y hora desea para ver la propiedad, escriba `Mañana a las 8:00 AM`.
 
-Confirm that the agent responds with the message indicating the booking request is being scheduled.
+Confirme que el agente responda con el mensaje que indica que la solicitud de reserva se está programando.
 
-## Summary
+## Resumen
 
-In this lab, you used entities to extract structured values from natural language while keeping generative AI enabled. Entities allow your agent to accept flexible input while maintaining predictable behavior.
+En este laboratorio, usó entidades (entities) para extraer valores estructurados del lenguaje natural mientras la IA generativa permanecía habilitada. Las entidades (entities) permiten que el agente acepte entradas flexibles mientras mantiene un comportamiento predecible.
 
-In the next lab, you will use tools to act on these structured values and perform real operations, such as retrieving or creating data.
+En el siguiente laboratorio, usará herramientas (tools) para actuar sobre estos valores estructurados y realizar operaciones reales, como recuperar o crear datos.

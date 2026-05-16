@@ -209,7 +209,7 @@ En este ejercicio, probará el enrutamiento de temas (topics) y confirmará que 
 
 Observe que fue redirigido al tema (topic) **Book Showing**.
 
-1. Escriba `555 Oak Lane, Denver, CO 80203` en el prompt **Which property to you want to see?**
+1. Escriba `Casa Colonial en Coyoacán` en el prompt **Which property to you want to see?**
 
 1. Escriba `Mañana a las 10:00 AM` en el prompt **What date and time do you want to see the property?**.
 
