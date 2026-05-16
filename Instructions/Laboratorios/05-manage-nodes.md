@@ -1,219 +1,219 @@
 ---
 lab:
-  title: Manage nodes
-  module: Manage topics in Microsoft Copilot Studio
-  description: In this lab, you created the Book Showing topic and used nodes to enforce a structured, step-by-step interaction while generative AI remained enabled. You also configured variable scope so information collected in Customer Details can be used across topics.
+  title: Administrar nodos
+  module: Administrar temas en Microsoft Copilot Studio
+  description: En este laboratorio, creó el tema (topic) Book Showing y usó nodos (nodes) para aplicar una interacción estructurada paso a paso mientras la IA generativa permanecía habilitada. También configuró el ámbito de las variables para que la información recopilada en Customer Details pueda usarse entre temas (topics).
   duration: 152 minutes
   level: 100
   islab: true
 ---
 
-# Manage nodes
+# Administrar nodos
 
-## Scenario
+## Escenario
 
-In this exercise, you will build a predictable, step-by-step conversation flow using nodes while generative AI remains enabled. When generative AI is enabled, the agent may respond dynamically to some prompts. Topics and nodes are used when you need structured, repeatable outcomes—for example, collecting required information in a fixed order.
+En este ejercicio, creará un flujo de conversación predecible y paso a paso mediante nodos (nodes) mientras la IA generativa permanece habilitada. Cuando la IA generativa está habilitada, el agente puede responder dinámicamente a algunos prompts. Los temas (topics) y los nodos (nodes) se usan cuando necesita resultados estructurados y repetibles; por ejemplo, recopilar información obligatoria en un orden fijo.
 
-In this exercise, you will:
+En este ejercicio, hará lo siguiente:
 
-- Create the **Book Showing** topic
-- Add nodes to enforce a structured conversation flow
-- Test the agent and verify topic routing
+- Crear el tema (topic) **Book Showing**
+- Agregar nodos (nodes) para aplicar un flujo de conversación estructurado
+- Probar el agente y comprobar el enrutamiento de temas (topics)
 
-This exercise will take approximately **30** minutes to complete.
+Este ejercicio tardará aproximadamente **30** minutos en completarse.
 
-## What you will learn
+## Lo que aprenderá
 
-- How to use nodes to enforce a structured conversation when generative AI is enabled
-- How to share variables across topics using variable scope
-- How to build repeatable, step-by-step topic flows using message, question, condition, and topic management nodes
+- Cómo usar nodos (nodes) para aplicar una conversación estructurada cuando la IA generativa está habilitada
+- Cómo compartir variables entre temas (topics) mediante el ámbito de las variables
+- Cómo crear flujos de temas (topics) repetibles y paso a paso mediante nodos (nodes) de mensaje, pregunta, condición y administración de temas
 
-## High-level lab steps
+## Pasos generales del laboratorio
 
-- Create Book Showing topic
-- Configure variable scope to use variables from the Customer Details topic in the Book Showing topic
-- Create and edit nodes
-- Test the agent
+- Crear el tema (topic) Book Showing
+- Configurar el ámbito de las variables para usar variables del tema (topic) Customer Details en el tema (topic) Book Showing
+- Crear y editar nodos (nodes)
+- Probar el agente
   
-## Prerequisites
+## Requisitos previos
 
-- Must have completed **Lab: Manage topics**
+- Debe haber completado **Lab: Manage topics**
 
-## Detailed steps
+## Pasos detallados
 
-## Exercise 1 - Create a topic from blank
+## Ejercicio 1 - Crear un tema desde cero
 
-In this exercise, you will create the **Book Showing** topic and add trigger phrases. Trigger phrases help the agent recognize when the user is trying to book a showing.
+En este ejercicio, creará el tema (topic) **Book Showing** y agregará frases desencadenadoras (trigger phrases). Las frases desencadenadoras (trigger phrases) ayudan al agente a reconocer cuándo el usuario intenta reservar una visita.
 
-### Task 1.1 - Create a topic from blank
+### Tarea 1.1 - Crear un tema desde cero
 
-1. Navigate to the Copilot Studio portal `https://copilotstudio.microsoft.com` and ensure you are in the appropriate environment.
+1. Vaya al portal de Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Select **Agents** from the left navigation pane.
+1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Select the **Real Estate Booking Service** agent you created in the earlier lab.
+1. Seleccione el agente **Real Estate Booking Service** que creó en el laboratorio anterior.
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select **+ Add a topic** and select **From blank**.
+1. Seleccione **+ Add a topic** y luego **From blank**.
 
-1. Select the **Details** icon to open the Topic details dialog (you may need to select **More** \> **Details**).
+1. Seleccione el icono **Details** para abrir el cuadro de diálogo de detalles del tema (topic) (es posible que deba seleccionar **More** \> **Details**).
 
     ![Screenshot of the topic details dialog ](../media/topic-details.png)
 
-1. In the **Name** field, enter the following text:
+1. En el campo **Name**, escriba el texto siguiente:
 
     `Book Showing`
 
-1. In the **Description** field, enter the following text:
+1. En el campo **Description**, escriba el texto siguiente:
 
-    `Use this topic when a user wants to book, schedule, or arrange a real estate property showing`
+    `Use este tema cuando un usuario quiera reservar, programar u organizar una visita a una propiedad inmobiliaria`
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 1.2 - Verify trigger type
+### Tarea 1.2 - Comprobar el tipo de desencadenador
 
-1. Select the **Trigger** node at the top of the topic. Confirm the trigger type is set to **The agent chooses**. 
+1. Seleccione el nodo (node) **Trigger** en la parte superior del tema (topic). Confirme que el tipo de desencadenador esté establecido en **The agent chooses**. 
 
-> **Note** With generative orchestration enabled, the agent uses this description to decide when to start the topic.
+> **Nota** Con la orquestación generativa (generative orchestration) habilitada, el agente usa esta descripción para decidir cuándo iniciar el tema (topic).
 
-## Exercise 2 - Variable scope
+## Ejercicio 2 - Ámbito de las variables
 
-Enable variables to be be accessed by other topics.
+Habilite las variables para que otros temas (topics) puedan acceder a ellas.
 
-### Task 2.1 - Configure the scope of the variables
+### Tarea 2.1 - Configurar el ámbito de las variables
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select the **Customer Details** topic.
+1. Seleccione el tema (topic) **Customer Details**.
 
-1. Select **Variables** in the top bar to open the Variables pane (you may need to select **More** \> **Variables**).
+1. Seleccione **Variables** en la barra superior para abrir el panel Variables (es posible que deba seleccionar **More** \> **Variables**).
 
-1. Select and expand **Topic** variables.
+1. Seleccione y expanda las variables de **Topic**.
 
-1. Select the right-hand check boxes for the three topic variables. This enables the variables in this topic to be available for other topics to use.
+1. Seleccione las casillas de verificación del lado derecho para las tres variables del tema (topic). Esto permite que las variables de este tema (topic) estén disponibles para que otros temas (topics) las usen.
 
     ![Screenshot of the variables pane.](../media/variables-pane.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-## Exercise 3 - Author a structured topic flow with nodes
+## Ejercicio 3 - Crear un flujo de tema estructurado con nodos
 
-In this exercise, you will add nodes to the Book Showing topic to enforce a repeatable, step-by-step flow.
+En este ejercicio, agregará nodos (nodes) al tema (topic) Book Showing para aplicar un flujo repetible y paso a paso.
 
-### Task 3.1 - Add a message node
+### Tarea 3.1 - Agregar un nodo de mensaje
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select the **Book Showing** topic.
+1. Seleccione el tema (topic) **Book Showing**.
 
-1. Select the the **+** icon under the Trigger node and select **Send a message**.
+1. Seleccione el icono **+** debajo del nodo (node) Trigger y luego **Send a message**.
 
     ![Screenshot of adding a node.](../media/add-node.png)
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `Hi, I can help you with booking a real estate property showing.`
+    `Hola, puedo ayudarle a reservar una visita a una propiedad inmobiliaria.`
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 3.2 - Route to the Customer Details topic
+### Tarea 3.2 - Enrutar al tema Customer Details
 
-1. Select the the **+** icon under the **Message** node
+1. Seleccione el icono **+** debajo del nodo (node) **Message**.
 
-1. Select **Topic management** \> **Go to another topic** \> **Customer Details**.
+1. Seleccione **Topic management** \> **Go to another topic** \> **Customer Details**.
 
     ![Screenshot of adding a topic management node.](../media/topic-management-node.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 3.3 - Add condition node
+### Tarea 3.3 - Agregar un nodo de condición
 
-1. Select the the **+** icon under the **Topic** node and select **Add a condition**.
+1. Seleccione el icono **+** debajo del nodo (node) **Topic** y luego **Add a condition**.
 
-1. In the **Condition** node, select the **DetailsCorrect** variable.
+1. En el nodo (node) **Condition**, seleccione la variable **DetailsCorrect**.
 
-1. Select **is equal to**.
+1. Seleccione **is equal to**.
 
-1. Select **Yes**.
+1. Seleccione **Yes**.
 
     ![Screenshot of adding a condition node.](../media/condition-node.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-### Task 3.4 - Add question nodes
+### Tarea 3.4 - Agregar nodos de pregunta
 
-1. Select the the **+** icon under the left **Condition** node and select **Ask a question**.
+1. Seleccione el icono **+** debajo del nodo (node) **Condition** de la izquierda y luego **Ask a question**.
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `Which property do you want to see?`
+    `¿Qué propiedad desea ver?`
 
-1. Select **User's entire response** for **Identify**.
+1. Seleccione **User's entire response** para **Identify**.
 
-1. Select the variable in **Save user response as** and enter **`PropertyName`** for **Variable name**.
+1. Seleccione la variable en **Save user response as** y escriba **`PropertyName`** para **Variable name**.
 
     ![Screenshot of adding a question node.](../media/question-node-2.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-1. Select the the **+** icon under the new **Question** node and select **Ask a question**.
+1. Seleccione el icono **+** debajo del nuevo nodo (node) **Question** y luego **Ask a question**.
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `What date and time do you want to see the property?`
+    `¿Qué fecha y hora desea para ver la propiedad?`
 
-1. Select **Date and time** for **Identify**.
+1. Seleccione **Date and time** para **Identify**.
 
-1. Select the variable in **Save user response as** and enter **`VisitDateTime`** for **Variable name**
+1. Seleccione la variable en **Save user response as** y escriba **`VisitDateTime`** para **Variable name**.
 
-1. Select the **+** icon under the left **Question** node and select **Send a messsage**.
+1. Seleccione el icono **+** debajo del nodo (node) **Question** de la izquierda y luego **Send a messsage**.
 
-1. In the **Enter a message** field, enter the following text:
+1. En el campo **Enter a message**, escriba el texto siguiente:
 
-    `Great! Let me get that scheduled for you.`
+    `¡Excelente! Permítame programarlo para usted.`
 
-1. After that message node, add a node to end the topics by selecting **Topic Management** \> **End all topics**.
+1. Después de ese nodo de mensaje (message node), agregue un nodo (node) para finalizar los temas (topics) seleccionando **Topic Management** \> **End all topics**.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-## Exercise 4 - Test the agent
+## Ejercicio 4 - Probar el agente
 
-In this exercise, you will test topic routing and confirm the conversation follows the expected step-by-step flow.
+En este ejercicio, probará el enrutamiento de temas (topics) y confirmará que la conversación siga el flujo paso a paso esperado.
 
-### Task 4.1 - Test the Book Showing topic
+### Tarea 4.1 - Probar el tema Book Showing
 
-1. Select the **Test** icon in the upper-right of the page to open the testing panel.
+1. Seleccione el icono **Test** en la esquina superior derecha de la página para abrir el panel de pruebas.
 
-1. Select the **ellipses ...** menu at the top of the testing panel in the upper-right of the page.
+1. Seleccione el menú de puntos suspensivos **...** en la parte superior del panel de pruebas, en la esquina superior derecha de la página.
 
-1. If it's not enabled, enable **Track between topics**.
+1. Si no está habilitado, habilite **Track between topics**.
 
     ![Screenshot of the Testing panel options.](../media/test-pane-options.png)
 
-1. Select the **Start new test session** icon at the top of the testing panel.
+1. Seleccione el icono **Start new test session** en la parte superior del panel de pruebas.
 
-1. When the **Conversation Start** message appears, your agent will start a conversation. In response, let's try to trigger the topic that you've created:
+1. Cuando aparezca el mensaje **Conversation Start**, el agente iniciará una conversación. Como respuesta, intente desencadenar el tema (topic) que creó:
 
-    `I want to book a real estate showing`
+    `Quiero reservar una visita a una propiedad inmobiliaria`
 
-1. The agent should respond with the "What is your name?" question.
+1. El agente debería responder con la pregunta "¿Cuál es su nombre?".
 
     ![Screenshot of the Conversation Start message and response.](../media/conversation-start-message.png)
 
-1. Provide a name.
+1. Proporcione un nombre.
 
-1. Provide an email address.
+1. Proporcione una dirección de correo electrónico.
 
-1. After you supply the information, an Adaptive Card displays the information that you entered and asks if the details are correct. Select **Yes**.
+1. Después de proporcionar la información, una tarjeta adaptable (Adaptive Card) muestra la información que ingresó y pregunta si los detalles son correctos. Seleccione **Yes**.
 
-Notice that you were routed back to the **Book Showing** topic.
+Observe que fue redirigido al tema (topic) **Book Showing**.
 
-1. Enter `555 Oak Lane, Denver, CO 80203` to the **Which property to you want to see?** prompt
+1. Escriba `555 Oak Lane, Denver, CO 80203` en el prompt **Which property to you want to see?**
 
-1. Enter `Tomorrow 10:00 AM` to the **What date and time do you want to see the property?** prompt.
+1. Escriba `Mañana a las 10:00 AM` en el prompt **What date and time do you want to see the property?**.
 
     ![Screenshot of the Adaptive Card with the information entered.](../media/adaptive-card-information.png)
 
-## Summary
-In this lab, you created the Book Showing topic and used nodes to enforce a structured, step-by-step interaction while generative AI remained enabled. You also configured variable scope so information collected in Customer Details can be used across topics.
+## Resumen
+En este laboratorio, creó el tema (topic) Book Showing y usó nodos (nodes) para aplicar una interacción estructurada paso a paso mientras la IA generativa permanecía habilitada. También configuró el ámbito de las variables para que la información recopilada en Customer Details pueda usarse entre temas (topics).
