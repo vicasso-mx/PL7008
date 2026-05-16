@@ -1,3 +1,4 @@
+```markdown
 ---
 lab:
   title: Administrar temas
@@ -103,13 +104,13 @@ En este ejercicio, usará Copilot para crear un tema a partir de una descripció
 
     ![Screenshot of the Edit with Copilot icon.](../media/edit-with-copilot.png)
 
-1. Seleccione el segundo nodo **Question** **What is your email address?**
+1. Seleccione el segundo nodo **Pregunta (Question)** **What is your email address?**
 
     ![Screenshot of the Edit with Copilot icon.](../media/copilot-email-address-node.png)
 
 1. En el panel **Edit with Copilot**, en el campo **What do you want to do?**, escriba el siguiente texto:
 
-    `Cambie "What is your email address?" para que agradezca a la variable Name del nodo anterior y luego continúe preguntando por la dirección de correo electrónico.`
+    `Cambie "What is your email address?" para que agradezca a la variable Nombre (Name) del nodo anterior y luego continúe preguntando por la dirección de correo electrónico.`
 
 1. Seleccione **Update**.
 
@@ -117,7 +118,7 @@ En este ejercicio, usará Copilot para crear un tema a partir de una descripció
 
     ![Screenshot of the message updated to include the Name variable.](../media/message-updated-name-variable.png)
 
-    > **Nota**: El mensaje debe actualizarse para incluir la variable *Name* del nodo anterior y debe verse de forma similar a la captura de pantalla anterior. Si **Edit with Copilot** no actualizó correctamente el nodo de pregunta, seleccione **Undo** y vuelva a intentarlo con un prompt diferente.
+    > **Nota**: El mensaje debe actualizarse para incluir la variable *Nombre (Name)* del nodo anterior y debe verse de forma similar a la captura de pantalla anterior. Si **Edit with Copilot** no actualizó correctamente el nodo de pregunta, seleccione **Undo** y vuelva a intentarlo con un prompt diferente.
 
 1. Seleccione **Save**.
 
@@ -133,15 +134,15 @@ Además de actualizar nodos existentes, puede usar Copilot para agregar nuevos n
 
 1. Seleccione **Update**.
 
-Se agrega al final del tema un nodo de mensaje con una Adaptive Card.
+Se agrega al final del tema un nodo de mensaje con una Tarjeta adaptable (Adaptive Card).
 
 ![Screenshot of the message node with an Adaptive Card.](../media/message-node-adaptive-card.png)
 
-1. Seleccione el cuadro **Media** en la Adaptive Card. Las propiedades de la Adaptive Card deberían aparecer en el lado derecho de la página.
+1. Seleccione el cuadro **Media** en la Tarjeta adaptable (Adaptive Card). Las propiedades de la Tarjeta adaptable (Adaptive Card) deberían aparecer en el lado derecho de la página.
 
     ![Screenshot of the Adaptive Card properties.](../media/adaptive-card-properties.png)
 
-   La fórmula de la Adaptive Card debería verse de forma similar a la anterior. Si no es así, puede pegar la fórmula siguiente:
+   La fórmula de la Tarjeta adaptable (Adaptive Card) debería verse de forma similar a la anterior. Si no es así, puede pegar la fórmula siguiente:
 
     ```json
     {
@@ -182,7 +183,7 @@ Se agrega al final del tema un nodo de mensaje con una Adaptive Card.
 
 1. En el campo **What do you want to do?**, escriba el siguiente texto:
 
-    `Agregue una nueva pregunta de opción múltiple para consultar al usuario si los detalles son correctos, con dos opciones: Yes o No`
+    `Agregue una nueva pregunta de opción múltiple para consultar al usuario si los detalles son correctos, con dos opciones: Sí (Yes) o No`
 
 1. Seleccione **Update**.
 
@@ -206,8 +207,9 @@ En laboratorios posteriores, usará esta respuesta para controlar la lógica de 
 
 1. Proporcione un nombre y una dirección de correo electrónico cuando se le solicite.
 
-1. Seleccione **Yes** cuando se le pida confirmar los detalles.
+1. Seleccione **Sí (Yes)** cuando se le pida confirmar los detalles.
 
 1. Seleccione **Save**
 
 Observe cómo el agente usa el tema para controlar la conversación, recopila la información requerida paso a paso y anula temporalmente las respuestas generativas de formato libre.
+```
