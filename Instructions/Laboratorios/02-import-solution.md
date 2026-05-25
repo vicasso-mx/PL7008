@@ -1,88 +1,88 @@
 ---
 lab:
-  title: Import Dataverse solution
-  module: Build an initial agent with Microsoft Copilot Studio
-  description: In this exercise, you will import a Dataverse solution into your environment that contains the tables needed for the labs.
-  duration: 70 minutes
+  title: Importar una solución de Dataverse
+  module: Crear un agente inicial con Microsoft Copilot Studio
+  description: En este ejercicio, importará una solución (solution) de Dataverse en su entorno (environment) que contiene las tablas (tables) necesarias para los laboratorios.
+  duration: 70 minutos
   level: 100
   islab: true
 ---
 
-# Import Dataverse solution
+# Importar una solución de Dataverse
 
-In this exercise, you'll import a Dataverse solution to use in the following labs. The solution includes a model-driven app for creating and managing Real Estate Properties.
+En este ejercicio, importará una solución (solution) de Dataverse para usarla en los siguientes laboratorios. La solución (solution) incluye una aplicación basada en modelo (model-driven app) para crear y administrar propiedades inmobiliarias (Real Estate Properties).
 
-This exercise will take approximately **10** minutes to complete.
+Este ejercicio tardará aproximadamente **10** minutos en completarse.
 
-## Exercise 1 – Import solution
+## Ejercicio 1 – Importar una solución
 
-In this exercise, you will import a Dataverse solution into your environment that contains the tables needed for the labs.
+En este ejercicio, importará una solución (solution) de Dataverse en su entorno (environment) que contiene las tablas (tables) necesarias para los laboratorios.
 
-### Task 1.1 – Download solution
+### Tarea 1.1 – Descargar la solución
 
-1. In a new browser tab, navigate to `https://github.com/MicrosoftLearning/mslearn-copilotstudio/raw/main/Allfiles/Bookings_1_0_0_0.zip` to download the **Bookings_1_0_0_0.zip** file.
+1. En una nueva pestaña del explorador, vaya a `https://github.com/MicrosoftLearning/mslearn-copilotstudio/raw/main/Allfiles/Bookings_1_0_0_0.zip` para descargar el archivo **Bookings_1_0_0_0.zip**.
 
-### Task 1.2 – Import solution
+### Tarea 1.2 – Importar la solución
 
-1. In a new browser tab, navigate to `https://make.powerapps.com`.
+1. En una nueva pestaña del explorador, vaya a `https://make.powerapps.com`.
 
-1. If prompted for credentials, sign in with your email address and password.
+1. Si se le solicitan credenciales, inicie sesión con su dirección de correo electrónico y contraseña.
 
-1. If prompted for contact information, set the Country/region and select **Get Started**.
+1. Si se le solicita información de contacto, establezca Country/region y seleccione **Get Started**.
 
-1. In the upper-right of the screen, verify that the **Environment** is set to your environment. This is where you will be working for the entirety of the labs. If it is not, select the appropriate environment.
-    > **Note:** If, at any time during these labs, the top navigation bar does not load fully and you are unable to see the Environment name, you may need to refresh your browser (Fn+F5).
+1. En la esquina superior derecha de la pantalla, compruebe que **Environment** esté establecido en su entorno (environment). Aquí trabajará durante todos los laboratorios. Si no es así, seleccione el entorno (environment) adecuado.
+    > **Nota:** Si, en cualquier momento durante estos laboratorios, la barra de navegación superior no se carga por completo y no puede ver el nombre de Environment, es posible que deba actualizar el explorador (Fn+F5).
 
-1. In the left navigation, select **Solutions**.
+1. En el panel de navegación izquierdo, seleccione **Solutions**.
 
-1. In the top bar, select **Import solution**.
+1. En la barra superior, seleccione **Import solution**.
 
-1. Select **Browse** and locate the **Bookings_1_0_0_0.zip** file from your Downloads folder and select **Open**.
+1. Seleccione **Browse**, busque el archivo **Bookings_1_0_0_0.zip** en su carpeta Downloads y seleccione **Open**.
 
     ![Solution to import.](../media/solution-to-import.png)
 
-1. Select **Next**.
+1. Seleccione **Next**.
 
-1. Select **Import**.
+1. Seleccione **Import**.
 
-    The solution will import in the background. This may take a few minutes. You may refresh the window.
+    La solución (solution) se importará en segundo plano. Esto puede tardar unos minutos. Puede actualizar la ventana.
 
     ![Solution imported.](../media/solution-imported.png)
 
-    > **Alert:** Wait until the solution has finished importing before continuing to the next step.
+    > **Alerta:** Espere hasta que la solución (solution) haya terminado de importarse antes de continuar con el siguiente paso.
 
-1. When the solution has imported successfully, open the **Bookings** solution.
+1. Cuando la solución (solution) se haya importado correctamente, abra la solución (solution) **Bookings**.
 
-1. In the left navigation, select the **Overview** tab.
+1. En el panel de navegación izquierdo, seleccione la pestaña **Overview**.
 
     ![Solution Overview tab.](../media/solution-overview.png)
 
-1. Select **Publish all customizations**.
+1. Seleccione **Publish all customizations**.
 
-### Task 1.3 – Set preferred solution
+### Tarea 1.3 – Establecer la solución preferida
 
-1. Select **Back to solutions** (back arrow icon).
+1. Seleccione **Back to solutions** (icono de flecha hacia atrás).
 
-1. Select **Set preferred solution**.
+1. Seleccione **Set preferred solution**.
 
-1. Select **Bookings (contoso)**.
+1. Seleccione **Bookings (contoso)**.
 
-1. Select **Apply**.
+1. Seleccione **Apply**.
 
-### Task 1.4 – Test data
+### Tarea 1.4 – Datos de prueba
 
-1. In the left navigation of the Bookings solution, select the **Objects** tab.
+1. En el panel de navegación izquierdo de la solución (solution) Bookings, seleccione la pestaña **Objects**.
 
-1. Select the **ellipses …** menu for the **Real Estate Property Management** Model-Driven App, and select **Play**. This is a simple model-driven app that will allow you to create new Real Estate Property records.
+1. Seleccione el menú **ellipses …** de la aplicación basada en modelo (model-driven app) **Real Estate Property Management** y seleccione **Play**. Esta es una aplicación basada en modelo (model-driven app) sencilla que le permitirá crear nuevos registros (records) de propiedades inmobiliarias (Real Estate Property).
 
     ![Overview.](../media/play-app.png)
 
-1. Select **+ New**.
+1. Seleccione **+ New**.
 
-1. Enter the following data:
+1. Escriba los siguientes datos:
 
     - **Property Name:** `1100 High Villas`
-    - **Owner:** Select your user (search for your provided username)
+    - **Owner:** Seleccione su usuario (busque el nombre de usuario que se le proporcionó)
     - **Asking Price:** `250,000`
     - **Street:** `Main Avenue`
     - **City:** `Redmond`
@@ -91,14 +91,14 @@ In this exercise, you will import a Dataverse solution into your environment tha
 
     ![Overview.](../media/add-record.png)
 
-1. Select **Save & Close**.
+1. Seleccione **Save & Close**.
 
-1. Select **+ New**.
+1. Seleccione **+ New**.
 
-1. Enter the following data:
+1. Escriba los siguientes datos:
 
     - **Property Name:** `555 Oak Lane`
-    - **Owner:** Select your user
+    - **Owner:** Seleccione su usuario
     - **Asking Price:** `300,000`
     - **Street:** `Oak Lane`
     - **City:** `Denver`
@@ -107,6 +107,6 @@ In this exercise, you will import a Dataverse solution into your environment tha
 
     ![Overview.](../media/add-record2.png)
 
-1. Select **Save & Close**.
+1. Seleccione **Save & Close**.
 
-You now have 2 Active Real Estate Properties in the view.
+Ahora tiene 2 propiedades inmobiliarias (Real Estate Properties) Active en la vista.

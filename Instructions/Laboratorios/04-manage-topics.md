@@ -87,7 +87,7 @@ En este ejercicio, usará Copilot para crear un tema (topic) a partir de una des
 
     ![Create topic with copilot.](../media/topic-create-with-copilot.png)
 
-1. En el cuadro de texto **Name your topic**, escriba **`Customer Details`**.
+1. En el cuadro de texto **Name your topic**, escriba **`Detalles del cliente`**.
 
 1. En el cuadro de texto **Create a topic to...**, escriba **`Preguntar al cliente por su nombre y dirección de correo electrónico`**.
 
@@ -109,7 +109,7 @@ En este ejercicio, usará Copilot para crear un tema (topic) a partir de una des
 
 1. En el panel **Edit with Copilot**, en el campo **What do you want to do?**, escriba el texto siguiente:
 
-    `Cambie "What is your email address?" para agradecer a la variable Name del nodo anterior y, a continuación, continuar con la pregunta sobre la dirección de correo electrónico.`
+    `Cambie "¿Cuál es su dirección de email?" para decir gracias a la variable Name del nodo anterior y, a continuación, continuar con la pregunta sobre la dirección de correo electrónico.`
 
 1. Seleccione **Update**.
 

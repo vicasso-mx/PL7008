@@ -60,21 +60,21 @@ Microsoft Copilot Studio usa entidades (entities) para comprender la intención 
 
 1. Seleccione **Closed list**.
 
-1. Escriba **`Property Type`** en el campo **Name**.
+1. Escriba **`Tipo Propiedad`** en el campo **Name**.
 
 1. Agregue los siguientes elementos a la lista: 
-    - Apartamento (Apartment)
-    - Condominio (Condominium)
-    - Dúplex (Duplex)
-    - Casa (House)
+    - Departamento 
+    - Condominio 
+    - Dúplex 
+    - Casa 
 
-1. Seleccione **+ Synonyms** para **Apartment**, escriba **`Flat`**, seleccione el icono **+** y luego seleccione **Done**.
+1. Seleccione **+ Synonyms** para **Departamento**, escriba **`Loft`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Seleccione **+ Synonyms** para **Condominium**, escriba **`Townhouse`**, seleccione el icono **+** y luego seleccione **Done**.
+1. Seleccione **+ Synonyms** para **Condominio**, escriba **`Propiedad commpartida`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Seleccione **+ Synonyms** para **House**, escriba **`Single-family home`**, seleccione el icono **+** y luego seleccione **Done**.
+1. Seleccione **+ Synonyms** para **Casa**, escriba **`Residencia`**, seleccione el icono **+** y luego seleccione **Done**.
 
-1. Habilite **Smart matching**.
+1. Habilite **Concidencia inteligente**.
 
     ![Screenshot of the a new entity.](../media/add-list-entity.png)
 
@@ -88,7 +88,7 @@ Microsoft Copilot Studio usa entidades (entities) para comprender la intención 
 
 1. Seleccione el mosaico **Regular expression (Regex)**.
 
-1. Escriba **`Number of Bedrooms`** en el campo **Name**.
+1. Escriba **`Número de Habitaciones`** en el campo **Name**.
 
 1. Escriba **`[1-5]`** en el campo **Pattern**.
 
@@ -114,11 +114,11 @@ Use entidades (entities) en el flujo de conversación para mejorar el agente.
 
     `¿Qué tipo de propiedad desea ver?`
 
-1. Seleccione **Property Type** para **Identify**.
+1. Seleccione **Tipo Propiedad** para **Identify**.
 
 1. Seleccione **Select options for user** y marque la opción **Display** para los cuatro valores.
 
-1. Seleccione la variable en **Save user response as** y escriba **`PropertyType`** en **Variable name**.
+1. Seleccione la variable en **Save user response as** y escriba **`TipoPropiedad`** en **Variable name**.
 
     ![Screenshot of the a new entity.](../media/question-node-entity.png)
 
@@ -130,7 +130,7 @@ Use entidades (entities) en el flujo de conversación para mejorar el agente.
 
 1. Seleccione **Number of Bedrooms** para **Identify**.
 
-1. Seleccione la variable en **Save user response as** y escriba **`NumberofBedrooms`** en **Variable name**.
+1. Seleccione la variable en **Save user response as** y escriba **`NumerodeHabitaciones`** en **Variable name**.
 
 1. Seleccione **Save**.
 
@@ -144,7 +144,7 @@ Use entidades (entities) en el flujo de conversación para mejorar el agente.
 
 1. Cuando aparezca el mensaje de Inicio de conversación (Conversation Start), escriba y envíe `Quiero reservar una visita a una propiedad inmobiliaria`.
 
-1. Confirme que el agente responda con el mensaje de saludo del tema (topic) **Book Showing**.
+1. Confirme que el agente responda con el mensaje de saludo del tema (topic) **Reservar Visita**.
 
 1. Proporcione un nombre y una dirección de correo electrónico cuando se le solicite y confirme la información.
 

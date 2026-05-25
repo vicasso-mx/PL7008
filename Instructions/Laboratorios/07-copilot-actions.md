@@ -39,13 +39,13 @@ Este ejercicio tardará aproximadamente **30** minutos en completarse.
 
 En este ejercicio, creará un flujo de agente (agent flow) que recupera una propiedad según los criterios proporcionados por el usuario.
 
-### Tarea 1.1 - Crear el flujo de agente (agent flow) Get Property
+### Tarea 1.1 - Crear el flujo de agente (agent flow) Obtener Propiedad
 
 1. Navegue al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
 1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Abra el agente **Real Estate Booking Service**.
+1. Abra el agente **Servicio de Solicitudes de Reservas**.
 
 1. Seleccione la pestaña **Tools**.
 
@@ -57,7 +57,7 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
 1. Seleccione **Text**.
 
-1. Escriba `Bedrooms` en **Input** y `Number of Bedrooms` en **Please enter your input**.
+1. Escriba `Habitaciones` en **Input** y `Número de Habitaciones` en **Please enter your input**.
 
     ![Captura de pantalla de las propiedades del desencadenador del flujo.](../media/create-flow-step2.png)
 
@@ -71,7 +71,7 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
     ![Captura de pantalla de la búsqueda del conector en el flujo.](../media/create-flow-step3.png)
 
-1. Seleccione la acción **List rows**.
+1. Seleccione la acción **Enumerar filas (List rows)**.
 
 1. Si se le solicita autenticación, escriba `Lab connection` en **Connection name**, seleccione **OAuth** en **Authentication Type**, seleccione **Sign in**, use las credenciales de su inquilino y seleccione **Allow access**.
 
@@ -81,11 +81,11 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
     ![Captura de pantalla de la habilitación de ventanas emergentes en Edge.](../media/failed-oauth-popup-2.png)
 
-1. Seleccione **Real Estate Properties** como nombre de tabla.
+1. Seleccione **Propiedades Inmobiliarias** como nombre de tabla.
 
 1. Escriba `contoso_bedrooms eq ` (con un espacio después de **eq**) en el campo **Filter Rows**.
 
-1. Con el campo **Filter Rows** aún seleccionado, seleccione el icono de **rayo** a su derecha y, a continuación, seleccione el parámetro **Bedrooms**.
+1. Con el campo **Filter Rows** aún seleccionado, seleccione el icono de **rayo** a su derecha y, a continuación, seleccione el parámetro **Habitaciones**.
 
     ![Captura de pantalla de la configuración de la acción List rows.](../media/create-flow-step4.png)
 
@@ -97,7 +97,7 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
 1. Seleccione **Text**.
 
-1. Escriba `PropertyId` en **Enter a name**.
+1. Escriba `IdPropiedad` en **Enter a name**.
 
 1. Seleccione el campo **Enter a value to respond with** y seleccione **fx (Insert Expression)**.
 
@@ -105,6 +105,10 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
     ```
     first(outputs('List_rows')?['body/value'])['contoso_realestatepropertyid']
+    ```
+
+    ```
+    first(outputs('Enumerar_filas')?['body/value'])['dclb_propiedadinmobiliariaid']
     ```
 
 1. Seleccione **Add**.
@@ -122,6 +126,11 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
     ```
     first(outputs('List_rows')?['body/value'])['contoso_propertyname']
     ```
+
+    ```
+    first(outputs('Enumerar_filas')?['body/value'])['dclb_nombrepropiedad']
+    ```
+
 
     ![Captura de pantalla de la configuración de la acción de respuesta.](../media/create-flow-step5.png)
 
@@ -141,9 +150,9 @@ En este ejercicio, creará un flujo de agente (agent flow) que recupera una prop
 
 1. Seleccione la herramienta de flujo de agente (agent flow) que acaba de crear.
 
-1. En la sección **Details**, actualice el **Name** del Flow a `Get Property`.
+1. En la sección **Details**, actualice el **Name** del Flow a `Obtener Propiedad`.
 
-1. Actualice la **Description** a `Get properties with the right number of bedrooms`.
+1. Actualice la **Description** a `Obtener propiedades con el número adecuado de habitaciones`.
 
 1. Seleccione **Save**.
 
@@ -179,7 +188,7 @@ Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujo
 
 ### Tarea 2.1 - Crear un flujo de agente (agent flow) para realizar una reserva
 
-1. Seleccione la pestaña **Tools** en **Real Estate Booking Service**.
+1. Seleccione la pestaña **Tools** en **Servicio de Solicitudes de Reservas**.
 
 1. Seleccione **+ Add a tool**.
 
@@ -191,7 +200,7 @@ Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujo
 
 1. Seleccione **Edit** en la sección **Details**.
 
-1. Cambie el nombre del flujo de agente (agent flow) a `Create Booking Request`.
+1. Cambie el nombre del flujo de agente (agent flow) a `Crear solicitud de reserva`.
 
 1. Seleccione **Save**.
 
@@ -201,19 +210,19 @@ Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujo
 
 1. Seleccione **Text**.
 
-1. Escriba `PropertyId` en **Input** y `Property` en **Please enter your input**.
+1. Escriba `IdPropiedad` en **Input** y `Property` en **Please enter your input**.
 
 1. Seleccione **+ Add an input**.
 
 1. Seleccione **Text**.
 
-1. Escriba `ViewerName` en **Input** y `Viewer Name` en **Please enter your input**.
+1. Escriba `NombreVisitante` en **Input** y `Nombre Visitante` en **Please enter your input**.
 
 1. Seleccione **+ Add an input**.
 
 1. Seleccione **Text**.
 
-1. Escriba `ViewerEmail` en **Input** y `Viewer Email` en **Please enter your input**.
+1. Escriba `EmailVisitante` en **Input** y `Email Visitante` en **Please enter your input**.
 
     ![Captura de pantalla de la configuración de la acción de parámetros del flujo.](../media/create-flow2-step1.png)
 
@@ -223,17 +232,17 @@ Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujo
 
 1. Seleccione la acción **Add a new row**.
 
-1. Seleccione **Booking Requests** como nombre de tabla.
+1. Seleccione **Solicitudes Reserva Citas** como nombre de tabla.
 
-1. Escriba `Agent booking` en el campo **Booking Name**.
+1. Escriba `Agente de Reserva` en el campo **Nombre de reserva**.
 
 1. Seleccione **Show all** en **Advanced parameters**.
 
-1. Escriba `contoso_bookingrequests()` en el campo **Property (Real Estate Properties)**, coloque el cursor dentro de los paréntesis, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **PropertyId**.
+1. Escriba `dclb_solicitudreservacita()` en el campo **Property (Propiedades Inmobiliarias)**, coloque el cursor dentro de los paréntesis, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **IdPropiedad**.
 
-1. Seleccione el campo **Viewer Email**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerEmail**.
+1. Seleccione el campo **Email Visitante**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerEmail**.
 
-1. Seleccione el campo **Viewer Name**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerName**.
+1. Seleccione el campo **Nombre Visitante**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerName**.
 
     ![Captura de pantalla de la configuración de la acción para agregar una fila al flujo.](../media/create-flow2-step2.png)
 
@@ -249,7 +258,7 @@ Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujo
 
 ### Tarea 2.2 - Validar sus herramientas
 
-1. Regrese al agente **Real Estate Booking Service**.
+1. Regrese al agente **Servicio de Solicitudes de Reservas**.
 
 1. Seleccione la pestaña **Tools** y valide que ambos flujos de agente (agent flows) estén en la lista. Si alguno no aparece, seleccione **+ Add a tool** > **Flow** > y seleccione el flujo de agente (agent flow) que falta. Seleccione **Add and configure**.
 

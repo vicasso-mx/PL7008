@@ -41,9 +41,9 @@ Este ejercicio tardará aproximadamente **20** minutos en completarse.
 
 1. Si aún no está abierto, vaya al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Abra el agente **Real Estate Booking Service**.
+1. Abra el agente **Servicio de Solicitudes de Reserva**.
 
-1. Seleccione **Settings** en la esquina superior derecha de **Real Estate Booking Service**.
+1. Seleccione **Settings** en la esquina superior derecha de **Servicio de Solicitudes de Reserva**.
 
 1. Seleccione la pestaña **Security**.
 
@@ -65,13 +65,13 @@ Este ejercicio tardará aproximadamente **20** minutos en completarse.
 
 En este ejercicio, configurará las respuestas generativas (generative answers) para que el agente solo pueda responder mediante conocimiento aprobado.
 
-### Tarea 2.1 - Restringir las respuestas generativas (generative answers) en Conversational boosting
+### Tarea 2.1 - Restringir las respuestas generativas (generative answers) en Potenciar Conversación (Conversational boosting)
 
 1. Seleccione **Topics**.
 
 1. Filtre por temas **System**.
 
-1. Abra el tema **Conversational boosting**.
+1. Abra el tema **Potenciar Conversación (Conversational boosting)**.
 
 1. Seleccione el nodo **Create generative answers**.
 
@@ -165,7 +165,7 @@ En este laboratorio, configuró activamente el comportamiento de la IA generativ
 
 ### Desafío - Agregar conocimiento desde un archivo
 
-Como desafío adicional, agregue un archivo como fuente de conocimiento adicional para el agente. Asegúrese de que también se agregue para Conversational boosting.
+Como desafío adicional, agregue un archivo como fuente de conocimiento adicional para el agente. Asegúrese de que también se agregue para Potenciar Conversación (Conversational boosting).
 
 Para descargar el archivo: abra una ventana nueva y navegue a `https://download.microsoft.com/documents/customerevidence/Files/4000007499/SummitRealtyCaseStudy.docx`
 
