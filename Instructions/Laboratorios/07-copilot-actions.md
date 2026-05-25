@@ -1,322 +1,323 @@
 ---
 lab:
-  title: Create agent flows
-  module: Enhance Microsoft Copilot Studio agents
-  description: In this exercise, you will create an agent flow that retrieves a property based on user‑provided criteria.
+  title: Crear flujos de agente (agent flows)
+  module: Mejorar agentes de Microsoft Copilot Studio
+  description: En este ejercicio, creará un flujo de agente (agent flow) que recupera una propiedad según los criterios proporcionados por el usuario.
   duration: 164 minutes
   level: 100
   islab: true
 ---
 
-# Create agent flows
+# Crear flujos de agente (agent flows)
 
-## Scenario
+## Escenario
 
-In this lab, you will use the structured values collected in earlier labs (such as property type, property name, and visit date) to retrieve data from Dataverse and create a booking request in Dataverse.
+En este laboratorio, usará los valores estructurados recopilados en laboratorios anteriores, como el tipo de propiedad, el nombre de la propiedad y la fecha de visita, para recuperar datos de Dataverse y crear una solicitud de reserva en Dataverse.
 
-In this exercise, you will:
+En este ejercicio, realizará lo siguiente:
 
-- Create an agent flow
+- Crear un flujo de agente (agent flow)
 
-This exercise will take approximately **30** minutes to complete.
+Este ejercicio tardará aproximadamente **30** minutos en completarse.
 
-## What you will learn
+## Lo que aprenderá
 
-- How to create a tool for running an agent flow in Copilot Studio
+- Cómo crear una herramienta para ejecutar un flujo de agente (agent flow) en Copilot Studio
 
-## High-level lab steps
+## Pasos generales del laboratorio
 
-- Create an agent flow to retrieve Dataverse data
-- Create an agent flow to create Dataverse data
+- Crear un flujo de agente (agent flow) para recuperar datos de Dataverse
+- Crear un flujo de agente (agent flow) para crear datos de Dataverse
   
-## Prerequisites
+## Requisitos previos
 
-- Must have completed **Lab: Work with entities**
+- Debe haber completado el **Laboratorio: Trabajar con entidades (Lab: Work with entities)**
 
-## Detailed steps
+## Pasos detallados
 
-## Exercise 1 - Create a tool to retrieve data property data from Dataverse
+## Ejercicio 1 - Crear una herramienta para recuperar datos de propiedades de Dataverse
 
-In this exercise, you will create an agent flow that retrieves a property based on user‑provided criteria.
+En este ejercicio, creará un flujo de agente (agent flow) que recupera una propiedad según los criterios proporcionados por el usuario.
 
-### Task 1.1 - Create the Get Property agent flow
+### Tarea 1.1 - Crear el flujo de agente (agent flow) Get Property
 
-1. Navigate to the Microsoft Copilot Studio portal `https://copilotstudio.microsoft.com` and ensure you are in the appropriate environment.
+1. Navegue al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Select **Agents** from the left navigation pane.
+1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Open the **Real Estate Booking Service** agent.
+1. Abra el agente **Real Estate Booking Service**.
 
-1. Select the **Tools** tab.
+1. Seleccione la pestaña **Tools**.
 
-1. Select **+ Add a tool**.
+1. Seleccione **+ Add a tool**.
 
-1. Under **Create new**, select **Agent flow**.
+1. En **Create new**, seleccione **Agent flow**.
 
-1. Select the trigger step **When an agent calls the flow** and select **+ Add an input**.
+1. Seleccione el paso desencadenador **When an agent calls the flow** y seleccione **+ Add an input**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `Bedrooms` for **Input** and `Number of Bedrooms` for **Please enter your input**.
+1. Escriba `Bedrooms` en **Input** y `Number of Bedrooms` en **Please enter your input**.
 
-    ![Screenshot of trigger properties of the flow.](../media/create-flow-step2.png)
+    ![Captura de pantalla de las propiedades del desencadenador del flujo.](../media/create-flow-step2.png)
 
-1. Select **Save draft** near the upper-right of the page.
+1. Seleccione **Save draft** cerca de la esquina superior derecha de la página.
 
-### Task 1.2 - Retrieve data from Dataverse
+### Tarea 1.2 - Recuperar datos de Dataverse
 
-1. Select the **+** icon between the two steps in the flow to add a new action.
+1. Seleccione el icono **+** entre los dos pasos del flujo para agregar una nueva acción.
 
-1. Enter `Dataverse` in the **Search** field and select **See more** for the **Microsoft Dataverse** connector.
+1. Escriba `Dataverse` en el campo **Search** y seleccione **See more** para el conector **Microsoft Dataverse**.
 
-    ![Screenshot of searching for connector in the flow.](../media/create-flow-step3.png)
+    ![Captura de pantalla de la búsqueda del conector en el flujo.](../media/create-flow-step3.png)
 
-1. Select the **List rows** action.
+1. Seleccione la acción **List rows**.
 
-1. If prompted for authentication, enter `Lab connection` for **Connection name**, select **OAuth** for **Authentication Type**, and select **Sign in**, and use your tenant credentials and **Allow access**.
+1. Si se le solicita autenticación, escriba `Lab connection` en **Connection name**, seleccione **OAuth** en **Authentication Type**, seleccione **Sign in**, use las credenciales de su inquilino y seleccione **Allow access**.
 
-    > **Note:** If you see a '**Failed to create OAuth connection**' error, you may need to allow popups in your browser.
+    > **Nota (Note):** Si aparece un error '**Failed to create OAuth connection**', es posible que deba permitir ventanas emergentes en su navegador.
 
-    ![Screenshot of OAuth error.](../media/failed-oauth-popup.png)
+    ![Captura de pantalla del error de OAuth.](../media/failed-oauth-popup.png)
 
-    ![Screenshot of allowing popups in Edge.](../media/failed-oauth-popup-2.png)
+    ![Captura de pantalla de la habilitación de ventanas emergentes en Edge.](../media/failed-oauth-popup-2.png)
 
-1. Select **Real Estate Properties** for table name.
+1. Seleccione **Real Estate Properties** como nombre de tabla.
 
-1. Enter `contoso_bedrooms eq ` (with a space after **eq**) in the **Filter Rows** field.
+1. Escriba `contoso_bedrooms eq ` (con un espacio después de **eq**) en el campo **Filter Rows**.
 
-1. With the **Filter Rows** field still selected, select the **lightning** icon to its right, then select the **Bedrooms** parameter.
+1. Con el campo **Filter Rows** aún seleccionado, seleccione el icono de **rayo** a su derecha y, a continuación, seleccione el parámetro **Bedrooms**.
 
-    ![Screenshot of configuring list rows action.](../media/create-flow-step4.png)
+    ![Captura de pantalla de la configuración de la acción List rows.](../media/create-flow-step4.png)
 
-1. Select **Save draft** near the upper-right of the page.
+1. Seleccione **Save draft** cerca de la esquina superior derecha de la página.
 
-### Task 1.3 - Return results to agent
+### Tarea 1.3 - Devolver resultados al agente
 
-1. Select the **Respond to the agent** node in the authoring canvas and select **+ Add an output**.
+1. Seleccione el nodo **Respond to the agent** en el lienzo de creación y seleccione **+ Add an output**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `PropertyId` for **Enter a name**
+1. Escriba `PropertyId` en **Enter a name**.
 
-1. Select the **Enter a value to respond with** field, and select **fx (Insert Expression)**.
+1. Seleccione el campo **Enter a value to respond with** y seleccione **fx (Insert Expression)**.
 
-1. Enter the following expression into the top field:
+1. Escriba la siguiente expresión en el campo superior:
 
     ```
     first(outputs('List_rows')?['body/value'])['contoso_realestatepropertyid']
     ```
 
-1. Select **Add**.
+1. Seleccione **Add**.
 
-1. Select **+ Add an output**.
+1. Seleccione **+ Add an output**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `PropertyName` for **Enter a name**.
+1. Escriba `PropertyName` en **Enter a name**.
 
-1. Select the **Enter a value to respond with** field, and select **fx (Insert Expression)**.
+1. Seleccione el campo **Enter a value to respond with** y seleccione **fx (Insert Expression)**.
 
-1. Enter the following expression:
+1. Escriba la siguiente expresión:
 
     ```
     first(outputs('List_rows')?['body/value'])['contoso_propertyname']
     ```
 
-    ![Screenshot of configuring response action.](../media/create-flow-step5.png)
+    ![Captura de pantalla de la configuración de la acción de respuesta.](../media/create-flow-step5.png)
 
-1. Select **Add**.
+1. Seleccione **Add**.
 
-1. Select the **Settings** tab in the **Respond to the agent** pane.
+1. Seleccione la pestaña **Settings** en el panel **Respond to the agent**.
 
-1. Ensure that **Asynchronous Response** is set to **Off**.
+1. Asegúrese de que **Asynchronous Response** esté establecido en **Off**.
 
-    ![Screenshot of response action settings.](../media/create-flow-step6.png)
+    ![Captura de pantalla de la configuración de la acción de respuesta.](../media/create-flow-step6.png)
 
-1. Select **Save draft** near the upper-right of the page.
+1. Seleccione **Save draft** cerca de la esquina superior derecha de la página.
 
-1. Select **Publish**.
+1. Seleccione **Publish**.
 
-1. In the **Your agent flow published successfully!** pop-up, select **Go back to agent**.
+1. En la ventana emergente **Your agent flow published successfully!**, seleccione **Go back to agent**.
 
-1. Select the agent flow tool that you just created.
+1. Seleccione la herramienta de flujo de agente (agent flow) que acaba de crear.
 
-1. In the **Details** section, update the Flow **Name** to `Get Property`
+1. En la sección **Details**, actualice el **Name** del Flow a `Get Property`.
 
-1. Update the **Description** to `Get properties with the right number of bedrooms`.
+1. Actualice la **Description** a `Get properties with the right number of bedrooms`.
 
-1. Select **Save**
+1. Seleccione **Save**.
 
-1. Select the **Tools** tab and see the Get Property flow you created.
+1. Seleccione la pestaña **Tools** y compruebe que aparezca el flujo Get Property que creó.
 
-1. Select **Publish**.
+1. Seleccione **Publish**.
 
-### Task 1.4 - Add the Get Property tool to the topic
+### Tarea 1.4 - Agregar la herramienta Get Property al tema (topic)
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select the **Book Showing** topic.
+1. Seleccione el tema (topic) **Book Showing**.
 
-1. Select the the **+** icon below the **How many bedrooms do you need?** question node, select **Add a tool**, select the **Tool** tab, and then select the **Get Property** agent flow.
+1. Seleccione el icono **+** debajo del nodo de pregunta **¿Cuántas habitaciones necesita? (How many bedrooms do you need?)**, seleccione **Add a tool**, seleccione la pestaña **Tool** y, a continuación, seleccione el flujo de agente (agent flow) **Get Property**.
 
-1. In the **Get Property** action pane, select the variable list for **Bedrooms (String)** and choose the **NumberofBedrooms** variable.
+1. En el panel de acciones **Get Property**, seleccione la lista de variables de **Bedrooms (String)** y elija la variable **NumberofBedrooms**.
 
-1. Select the **ellipses (...)** in the **Which property do you want to see?** question node and select **Delete**.
+1. Seleccione los **puntos suspensivos (...)** en el nodo de pregunta **¿Qué propiedad desea ver? (Which property do you want to see?)** y seleccione **Delete**.
 
-1. Select the the **+** icon under the **Tool** node and select **Send a message**.
+1. Seleccione el icono **+** debajo del nodo **Tool** y seleccione **Send a message**.
 
-1. In the **Enter a message** field, enter `Property ` (with a space following it).
+1. En el campo **Enter a message**, escriba `Property ` (con un espacio después del texto).
 
-1. In the same node, select the **{X} (Insert variable)** icon and select the **propertyname** variable.
+1. En el mismo nodo, seleccione el icono **{X} (Insert variable)** y seleccione la variable **propertyname**.
 
-    ![Screenshot of step 4 of add a flow action.](../media/add-action-flow-step-4.png)
+    ![Captura de pantalla del paso 4 para agregar una acción de flujo.](../media/add-action-flow-step-4.png)
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-## Exercise 2 - Create a tool to create a booking request
+## Ejercicio 2 - Crear una herramienta para crear una solicitud de reserva
 
-Microsoft Copilot Studio can create data in Microsoft Dataverse using agent flows.
+Microsoft Copilot Studio puede crear datos en Microsoft Dataverse mediante flujos de agente (agent flows).
 
-### Task 2.1 - Create agent flow to make a booking
+### Tarea 2.1 - Crear un flujo de agente (agent flow) para realizar una reserva
 
-1. Select the **Tools** tab in **Real Estate Booking Service**.
+1. Seleccione la pestaña **Tools** en **Real Estate Booking Service**.
 
-1. Select **+ Add a tool**.
+1. Seleccione **+ Add a tool**.
 
-1. Under **Create new**, select **Agent flow** .
+1. En **Create new**, seleccione **Agent flow**.
 
-1. Select **Save draft** and wait for the agent flow to save.
+1. Seleccione **Save draft** y espere a que se guarde el flujo de agente (agent flow).
 
-1. Select the **Overview** tab
+1. Seleccione la pestaña **Overview**.
 
-1. Select **Edit** in the **Details** section.
+1. Seleccione **Edit** en la sección **Details**.
 
-1. Rename the agent flow `Create Booking Request`
+1. Cambie el nombre del flujo de agente (agent flow) a `Create Booking Request`.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-1. Select the **Designer** tab.
+1. Seleccione la pestaña **Designer**.
 
-1. Select the trigger step **When an agent calls the flow** and select **+ Add an input**.
+1. Seleccione el paso desencadenador **When an agent calls the flow** y seleccione **+ Add an input**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `PropertyId` for **Input** and `Property` for **Please enter your input**.
+1. Escriba `PropertyId` en **Input** y `Property` en **Please enter your input**.
 
-1. Select **+ Add an input**.
+1. Seleccione **+ Add an input**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `ViewerName` for **Input** and `Viewer Name` for **Please enter your input**.
+1. Escriba `ViewerName` en **Input** y `Viewer Name` en **Please enter your input**.
 
-1. Select **+ Add an input**.
+1. Seleccione **+ Add an input**.
 
-1. Select **Text**.
+1. Seleccione **Text**.
 
-1. Enter `ViewerEmail` for **Input** and `Viewer Email` for **Please enter your input**.
+1. Escriba `ViewerEmail` en **Input** y `Viewer Email` en **Please enter your input**.
 
-    ![Screenshot of configuring flow parameters action.](../media/create-flow2-step1.png)
+    ![Captura de pantalla de la configuración de la acción de parámetros del flujo.](../media/create-flow2-step1.png)
 
-1. Select the **+** icon between the two steps in the flow to add a new action.
+1. Seleccione el icono **+** entre los dos pasos del flujo para agregar una nueva acción.
 
-1. Enter `Dataverse` in the **Search** field and select **See more** for the **Microsoft Dataverse** connector.
+1. Escriba `Dataverse` en el campo **Search** y seleccione **See more** para el conector **Microsoft Dataverse**.
 
-1. Select the **Add a new row** action.
+1. Seleccione la acción **Add a new row**.
 
-1. Select **Booking Requests** for table name.
+1. Seleccione **Booking Requests** como nombre de tabla.
 
-1. Enter `Agent booking` in the **Booking Name** field.
+1. Escriba `Agent booking` en el campo **Booking Name**.
 
-1. Select **Show all** under **Advanced parameters**.
+1. Seleccione **Show all** en **Advanced parameters**.
 
-1. Enter `contoso_bookingrequests()` in the **Property (Real Estate Properties)** field, move the cursor within the parentheses, select the **lightning** icon, then select the **PropertyId** parameter.
+1. Escriba `contoso_bookingrequests()` en el campo **Property (Real Estate Properties)**, coloque el cursor dentro de los paréntesis, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **PropertyId**.
 
-1. Select the **Viewer Email** field, select the **lightning** icon, then select the **ViewerEmail** parameter.
+1. Seleccione el campo **Viewer Email**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerEmail**.
 
-1. Select the **Viewer Name** field, select the **lightning** icon, then select the **ViewerName** parameter.
+1. Seleccione el campo **Viewer Name**, seleccione el icono de **rayo** y, a continuación, seleccione el parámetro **ViewerName**.
 
-    ![Screenshot of configuring flow add row action.](../media/create-flow2-step2.png)
+    ![Captura de pantalla de la configuración de la acción para agregar una fila al flujo.](../media/create-flow2-step2.png)
 
-1. Select the **Respond to the agent** action and open the **Respond to the agent** pane.
+1. Seleccione la acción **Respond to the agent** y abra el panel **Respond to the agent**.
 
-1. Select the **Settings** tab.
+1. Seleccione la pestaña **Settings**.
 
-1. Ensure that **Asynchronous Response** is set to **Off**.
+1. Asegúrese de que **Asynchronous Response** esté establecido en **Off**.
 
-1. Select **Save draft** in the upper-right of the window.
+1. Seleccione **Save draft** en la esquina superior derecha de la ventana.
 
-1. Wait for the save to complete, then select **Publish**.
+1. Espere a que finalice el guardado y, a continuación, seleccione **Publish**.
 
-### Task 2.2 - Validate your tools
+### Tarea 2.2 - Validar sus herramientas
 
-1. Return to your **Real Estate Booking Service** agent.
+1. Regrese al agente **Real Estate Booking Service**.
 
-1. Select the **Tools** tab and validate that both of your agent flows are in the list. If not, select **+ Add a tool** > **Flow** > and select the missing agent flow. Select **Add and configure**.
+1. Seleccione la pestaña **Tools** y valide que ambos flujos de agente (agent flows) estén en la lista. Si alguno no aparece, seleccione **+ Add a tool** > **Flow** > y seleccione el flujo de agente (agent flow) que falta. Seleccione **Add and configure**.
 
-### Task 2.3 - Add the Create Booking Request tool to the topic
+### Tarea 2.3 - Agregar la herramienta Create Booking Request al tema (topic)
 
-1. Select the **Topics** tab.
+1. Seleccione la pestaña **Topics**.
 
-1. Select the **Book Showing** topic.
+1. Seleccione el tema (topic) **Book Showing**.
 
-1. Select the the **+** icon above the **End all topics** node at the bottom, select **Add a tool**, then select the **Create Booking Request** agent flow.
+1. Seleccione el icono **+** encima del nodo **End all topics** en la parte inferior, seleccione **Add a tool** y, a continuación, seleccione el flujo de agente (agent flow) **Create Booking Request**.
 
-1. Select the **PropertyId** variable for the **PropertyId** input parameter.
+1. Seleccione la variable **PropertyId** para el parámetro de entrada **PropertyId**.
 
-1. Select the **Name** variable for the **ViewerName** input parameter.
+1. Seleccione la variable **Name** para el parámetro de entrada **ViewerName**.
 
-1. Select the **EmailAddress** variable for the **ViewerEmail** input parameter.
+1. Seleccione la variable **EmailAddress** para el parámetro de entrada **ViewerEmail**.
 
-1. Select **Save**.
+1. Seleccione **Save**.
 
-1. Select the Action node you just created for the Create Booking Request tool.
+1. Seleccione el nodo Action que acaba de crear para la herramienta Create Booking Request.
 
-1. Select **Copilot**.
+1. Seleccione **Copilot**.
 
-1. In **What do you want to do?**, enter: `After this action runs, send a message that the Real Estate Booking has been scheduled and thank the user`.
+1. En **What do you want to do?**, escriba: `Después de que se ejecute esta acción, envía un mensaje que indique que se programó la reserva de bienes raíces y agradece al usuario`.
 
-1. Select **Update**. 
+1. Seleccione **Update**. 
 
-A Message node has been created. Revise the message as desired to let the user know that a booking has been scheduled.
+Se creó un nodo Message. Revise el mensaje según lo desee para informar al usuario que se programó una reserva.
 
-## Exercise 3 - Test your agent
+## Ejercicio 3 - Probar el agente
 
-### Task 3.1 - Make a booking request
+### Tarea 3.1 - Realizar una solicitud de reserva
 
-1. Open the **Test** panel.
+1. Abra el panel **Test**.
 
-1. If it's not enabled, enable **Track between topics**.
+1. Si no está habilitado, habilite **Track between topics**.
 
-1. Select the **Start new test session** icon at the top of the testing panel.
+1. Seleccione el icono **Start new test session** en la parte superior del panel de pruebas.
 
-1. When the **Conversation Start** message appears, your agent will start a conversation. In response, enter a trigger phrase for the topic that you've created:
+1. Cuando aparezca el mensaje **Conversation Start**, el agente iniciará una conversación. Como respuesta, escriba una frase desencadenadora para el tema (topic) que creó:
 
-    `I want to book a real estate showing`
+    `Quiero reservar una visita a una propiedad inmobiliaria`
 
-1. Enter a name and email address.
+1. Escriba un nombre y una dirección de correo electrónico.
 
-1. After you supply the information, an Adaptive Card displays the information that you entered and asks if the details are correct. Select **Yes**.
+1. Después de proporcionar la información, una Tarjeta adaptable (Adaptive Card) muestra la información que escribió y pregunta si los detalles son correctos. Seleccione **Yes**.
 
-1. Select **House** for the type of property prompt.
+1. Seleccione **House** para la solicitud del tipo de propiedad.
 
-1. Enter `3` for the number of bedrooms prompts.
+1. Escriba `3` para la solicitud del número de habitaciones.
 
-    ![Screenshot of the test pane with the information entered.](../media/test-pane-action-results.png)
+    ![Captura de pantalla del panel de prueba con la información especificada.](../media/test-pane-action-results.png)
 
-1. Enter `Tomorrow 2:00 PM` to the **What date and time do you want to see the property?** prompt.
+1. Escriba `Mañana a las 2:00 p. m.` para la solicitud **¿En qué fecha y hora desea ver la propiedad? (What date and time do you want to see the property?)**.
 
-A Booking Request should be created based on the information you have given the agent.
+Se debe crear una solicitud de reserva según la información que proporcionó al agente.
 
-### Task 3.2 - Verify the booking request
+### Tarea 3.2 - Comprobar la solicitud de reserva
 
-1. Navigate to `https://make.powerapps.com` in a new tab.
+1. Navegue a `https://make.powerapps.com` en una pestaña nueva.
 
-1. Make sure you are in the appropriate environment.
+1. Asegúrese de estar en el entorno adecuado.
 
-1. Select **Apps** in the left navigation.
+1. Seleccione **Apps** en el panel de navegación izquierdo.
 
-1. Select **Play** on the **Real Estate Property Management** model-driven app.
+1. Seleccione **Play** en la aplicación basada en modelos **Real Estate Property Management**.
 
-1. In the left navigation, select **Booking Requests**. View the booking request your agent just created for you.
+1. En el panel de navegación izquierdo, seleccione **Booking Requests**. Consulte la solicitud de reserva que el agente acaba de crear para usted.
 
-    ![Screenshot of Maker portal showing booking request data.](../media/booking-request-row.png)
+    ![Captura de pantalla del portal de creadores que muestra los datos de la solicitud de reserva.](../media/booking-request-row.png)
+    

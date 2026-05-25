@@ -1,79 +1,79 @@
 ---
 lab:
-  title: Deploy agent to Microsoft Teams
-  module: Create an agent with Microsoft Copilot Studio and Dataverse for Teams
-  description: In this lab, you deployed your agent to Microsoft Teams. Congratulations on completing your labs!
-  duration: 54 minutes
+  title: Implementar un agente en Microsoft Teams
+  module: Crear un agente con Microsoft Copilot Studio y Dataverse for Teams
+  description: En este laboratorio, implementó su agente en Microsoft Teams. ¡Felicitaciones por completar sus laboratorios!
+  duration: 54 minutos
   level: 100
   islab: true
   primarytopics:
     - Microsoft Teams
 ---
 
-# Deploy agent to Microsoft Teams
+# Implementar un agente en Microsoft Teams
 
-## Scenario
+## Escenario
 
-In this exercise, you will:
+En este ejercicio, realizará lo siguiente:
 
-- Deploy an agent to the Microsoft Teams channel
+- Implementar un agente en el canal de Microsoft Teams
 
-This exercise will take approximately **10** minutes to complete.
+Este ejercicio tardará aproximadamente **10** minutos en completarse.
 
-## What you will learn
+## Lo que aprenderá
 
-- How to deploy an agent to Microsoft Teams
+- Cómo implementar un agente en Microsoft Teams
 
-## High-level lab steps
+## Pasos generales del laboratorio
 
 - Publish
-- Deploy agent to Microsoft Teams
+- Implementar un agente en Microsoft Teams
   
-## Prerequisites
+## Requisitos previos
 
-- Must have completed **Lab: Use Generative AI in Microsoft Copilot Studio**
+- Debe haber completado el **Laboratorio: Usar IA generativa en Microsoft Copilot Studio**
 
 
-## Exercise 1 - Publish the agent
+## Ejercicio 1: Publicar el agente
 
-### Task 1.1 - Publish the latest content
+### Tarea 1.1: Publicar el contenido más reciente
 
-1. Navigate to the Microsoft Copilot Studio portal `https://copilotstudio.microsoft.com` and ensure you are in the appropriate environment.
+1. Vaya al portal de Microsoft Copilot Studio `https://copilotstudio.microsoft.com` y asegúrese de estar en el entorno adecuado.
 
-1. Select **Agents** from the left navigation pane.
+1. Seleccione **Agents** en el panel de navegación izquierdo.
 
-1. Select the agent you created in the earlier lab.
+1. Seleccione el agente que creó en el laboratorio anterior.
 
-1. Select **Publish** and select **Publish** again.
+1. Seleccione **Publish** y, a continuación, seleccione **Publish** nuevamente.
 
-## Exercise 2 - Channels
+## Ejercicio 2: Canales
 
-With your agent published, you can make your agent available to users in Teams. This way you, your teammates, and your broader organization can interact with it.
+Una vez publicado el agente, puede ponerlo a disposición de los usuarios en Teams. De esta manera, usted, sus compañeros de equipo y el resto de la organización pueden interactuar con él.
 
-### Task 2.1 - Microsoft Teams channel
+### Tarea 2.1: Canal de Microsoft Teams
 
-1. With your agent open in Microsoft Copilot Studio, select the **Channels** tab.
+1. Con el agente abierto en Microsoft Copilot Studio, seleccione la pestaña **Channels**.
 
-1. Select the **Teams and Microsoft 365 Copilot** tile.
+1. Seleccione el mosaico **Teams and Microsoft 365 Copilot**.
 
-1. Deselect **Make agent available in Microsoft 365 Copilot**.
+1. Anule la selección de **Make agent available in Microsoft 365 Copilot**.
 
-1. Select **Add channel**.
+1. Seleccione **Add channel**.
 
-1. Select **See agent in Teams**
+1. Seleccione **See agent in Teams**.
 
-1. Select **Cancel** in the dialog box for **This site is trying to open Microsoft Teams**.
+1. Seleccione **Cancel** en el cuadro de diálogo de **This site is trying to open Microsoft Teams**.
 
-1. In the pop-up, select **Cancel** and select **Use the web app instead**.
+1. En la ventana emergente, seleccione **Cancel** y, a continuación, seleccione **Use the web app instead**.
 
-1. Select **Add** to add the agent to Teams.
+1. Seleccione **Add** para agregar el agente a Teams.
 
-    ![Screenshot of dialog to add the app to Teams.](../media/teams-add-app.png)
+    ![Captura de pantalla del cuadro de diálogo para agregar la aplicación a Teams.](../media/teams-add-app.png)
 
-1. Select **Open** and wait for the agent to load in Teams.
+1. Seleccione **Open** y espere a que el agente se cargue en Teams.
 
-1. Test the agent.
+1. Pruebe el agente.
 
-    ![Screenshot of the agent in Teams.](../media/teams-copilot.png)
+    ![Captura de pantalla del agente en Teams.](../media/teams-copilot.png)
 
-In this lab, you deployed your agent to Microsoft Teams. Congratulations on completing your labs!
+En este laboratorio, implementó su agente en Microsoft Teams. ¡Felicitaciones por completar sus laboratorios!
